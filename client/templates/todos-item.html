@@ -1,0 +1,42 @@
+<template name="todosItem">
+  {{#if inputActive}}
+  <div class="list-item {{checkedClass}} editing">
+    <label class="checkbox">
+      <input type="checkbox" checked="{{checked}}" name="checked">
+      <span class="checkbox-custom"></span>
+    </label>
+
+    <input type="text" value="{{text}}" placeholder="Task name" id = "{{_id}}">
+    <a class="js-edit-item delete-item" href="#" style = "display: inline-block;"><span class="icon-edit"></span></a>
+    <a class="js-delete-item delete-item" href="#" style = "display: inline-block;"><span class="icon-trash"></span></a> 
+  </div>
+  {{else}}
+  <div class="list-item {{checkedClass}} {{editingClass}}">
+    <label class="checkbox">
+      <input type="checkbox" checked="{{checked}}" name="checked">
+      <span class="checkbox-custom"></span>
+    </label>
+
+	    <span class = "special" tabindex="0" style = "padding: .75rem 0;
+	line-height: 1.5rem !important;
+	border: none;
+	border-radius: 0;
+	box-sizing: border-box;
+	color: #333333;">{{text}}</span>
+	
+    <a class="js-edit-item delete-item" href="#"><span class="icon-edit"></span></a>
+    <a class="js-delete-item delete-item" href="#"><span class="icon-trash"></span></a>
+  </div>
+  {{/if}}
+<!-- 	<span style = "padding: .75rem 0;
+    line-height: 1.5rem !important;
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #333333;">{{text}}</span>
+    <a class="" href="#" style = "color: #cccccc;line-height: 3rem;text-align: center; float: right;"><span class="icon-pencil"></span></a>
+    <a class="js-delete-item" href="#" style = "color: #cccccc;line-height: 3rem;text-align: center; float: right;"><span class="icon-trash"></span></a> -->
+
+
+</template>
+
